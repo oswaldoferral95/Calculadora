@@ -1,0 +1,91 @@
+<html>
+    <head>
+    <link href="calcu.css"rel ="stylesheet"type="text/css">
+     <meta charset="utf-8">
+    <meta name="viewport" content ="width=device-width, user-scalable=no">
+
+    
+    
+    
+    
+    
+    </head>
+    
+    <body class="bod">
+    <h1> ESTO ES UN SECRETO </h1>
+    <P> ESCRIBE EL CONTENIDO DE TU ACORDEON </P>
+   <textarea placeholder = " acordeon" id="a"></textarea>
+    <button onclick="guardar()">Guardar</button>
+        
+        <script>
+            
+            window.addEventListener('load',cargar,true);
+            
+            
+            function cargar(){
+                if(localStorage.getItem('acordeon')){
+                    acordeonGuardado = localStorage.getItem('acordeon');
+                    document.getElementById('a').value = acordeonGuardado;
+                }
+            }
+        function guardar (){
+            
+            acordeon= document.getElementById('a').value;
+            // Localstorage
+            //alamacenamiento local en el navegador.
+            //el objeto" local storage" tiene el metodo7
+            // "setitem" que recibe dos argumentos,
+            //el primero es el nombre de la variable o llave
+            //el segundo es el valor que se guardara
+            localStorage.setItem('acordeon', acordeon);
+            window.location.assign('index.html');
+        }
+        </script>
+    
+    
+    </body>
+    <style>
+        h1{
+            text-align: center;
+            color: rgba(255,255,255,.7);
+            font-family:'Segoe UI','Arial','Sans-serif';
+            font-weight: normal;
+            margin: 10px 0px;
+            font-size: 2em;
+        }
+        
+        p{
+            text-align: center;
+            color: rgba(255,255,255,.5);
+            font-size: 1em;
+            font-family: 'Segoe UI','Arial','Sans-serif';
+            margin: 10px 30px;
+            
+        }
+        textarea{
+            width: 90%;
+            margin-left: 5%;
+            font-size:1em;
+               font-family: 'Segoe UI','Arial','Sans-serif';
+            background: rgba(0,0,0,.3);
+            border: none;
+            border-radius: 10px;
+            height: 50%;
+            padding: 10px;
+            outline: none;
+        }
+        button{
+            width: 50%;
+            height: 40px;
+            background: rgba(255,255,255,.6);
+            font-size: 1.3em;
+            margin-left: 25%;
+            margin-top: 20px;
+            color: rgba(0,0,0,.8);
+            border-radius: 5px;
+            outline: none;
+        }
+    
+    
+    </style>
+</html>

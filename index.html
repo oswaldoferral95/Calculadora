@@ -1,0 +1,64 @@
+
+<html>
+<head>
+<title> Calculadora 2 </title>
+    
+            <meta charset="utf-8">
+     <link href="calcu.css" rel = "stylesheet" type="text/css" >
+    <meta name="viewport" content ="width=device-width, user-scalable=no">
+    
+    
+
+
+</head>
+    <body class="bod">
+        
+        <div>
+            
+             <input type="text" class= "dis" placeholder=" INGRESA OPERACIÓN " id="pantalla">
+       
+        </div>
+        <div>
+        
+    <button class="boton" onclick="borrar()">C</button>
+    <button class="boton">AC</button>
+            <button class="boton">%</button>
+    <button class="boton" onclick="agregar('/')">/</button>
+    <button class="boton" onclick="agregar('1')">1</button>
+    <button class="boton" onclick="agregar('2')">2</button>
+    <button class="boton" onclick="agregar('3')">3</button>
+    <button class="boton" onclick="agregar ('+')">+</button>
+    <button class="boton" onclick="agregar('4')">4</button>
+    <button class="boton" onclick="agregar('5')">5</button> 
+    <button class="boton" onclick="agregar('6')">6</button>
+         <button class="boton" onclick="agregar('-')">-</button>
+         <button class="boton" onclick="agregar('7')">7</button>
+         <button class="boton" onclick="agregar('8')">8</button>
+         <button class="boton" onclick="agregar('9')">9</button>
+         <button class="boton" onclick="agregar('*')">*</button>
+         <button class="boton" onclick="agregar('.00')">.00</button>
+         <button class="boton" onclick="agregar('0')">0</button>
+         <button class="boton" onclick="agregar('.')">.</button>
+         <button class="boton" onclick="igual()">=</button>
+        </div>
+          <script>
+            
+           function agregar (caracter){
+                var boton = document.getElementById('pantalla').value+=caracter;
+           }
+              function borrar(){
+                   var boton = document.getElementById('pantalla').value="";
+                  
+              }
+              function igual(){
+                  cadena = document.getElementById('pantalla').value;
+                  if (cadena =='007'){
+                      window.location.assign('codigo.html');
+                  }
+                  total= eval(cadena);
+                  document.getElementById('pantalla').value=total;
+              }
+            </script>
+        
+    </body>
+</html>   
